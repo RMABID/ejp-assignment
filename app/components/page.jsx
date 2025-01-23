@@ -1,11 +1,13 @@
 "use client";
-import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 
-
+import {
+  LoginLink,
+  LogoutLink,
+  RegisterLink,
+} from "@kinde-oss/kinde-auth-nextjs";
 import Link from "next/link";
 
 const Navbar = ({ user }) => {
-
   return (
     <nav className="bg-gray-200 py-4">
       <div className="flex justify-evenly">
@@ -17,11 +19,12 @@ const Navbar = ({ user }) => {
           <li>
             <Link href={"/protect"}>Protected</Link>
           </li>
-          <li>
-            <Link href={"/about"}>About</Link>
-          </li>
+
           {user && user?.email ? (
             <div className="flex items-center">
+              <li>
+                <Link href={"/myprofile"}>Profile</Link>
+              </li>
               <img
                 className="w-10 h-10 rounded-full"
                 src={user?.picture}
@@ -30,7 +33,7 @@ const Navbar = ({ user }) => {
               <LogoutLink>Log out</LogoutLink>
             </div>
           ) : (
-            <ul>
+            <ul className="flex items-center gap-4">
               <li>
                 <RegisterLink className="btn">Register</RegisterLink>
               </li>
