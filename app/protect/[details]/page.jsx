@@ -16,10 +16,9 @@ const Details = ({ params }) => {
       });
   }, [params]);
 
-  console.log(data);
 
   return (
-    <div className="w-10/12 mx-auto my-12">
+    <div className="w-10/12 mx-auto my-12 min-h-[700px]">
       <div className="border space-y-3 rounded-xl shadow p-5">
         <p className="text-lg">
           Id : <span>{data.id}</span>
