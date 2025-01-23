@@ -21,7 +21,7 @@ const Navbar = ({ user }) => {
           </li>
 
           {user && user?.email ? (
-            <div className="flex items-center">
+            <div className="flex space-x-4 items-center">
               <li>
                 <Link href={"/myprofile"}>Profile</Link>
               </li>
@@ -30,15 +30,15 @@ const Navbar = ({ user }) => {
                 src={user?.picture}
                 alt={user?.given_name}
               />
-              <LogoutLink>Log out</LogoutLink>
+              <LogoutLink className="btn btn-outline">Log out</LogoutLink>
             </div>
           ) : (
             <ul className="flex items-center gap-4">
               <li>
-                <RegisterLink className="btn">Register</RegisterLink>
+                <RegisterLink className="btn ">Register</RegisterLink>
               </li>
               <li>
-                <LoginLink className="btn">Login</LoginLink>
+                <LoginLink className="btn btn-outline">Login</LoginLink>
               </li>
             </ul>
           )}
